@@ -6,10 +6,10 @@ require "logstash/event"
 
 describe LogStash::Outputs::Documentdb do
 
-  let(:docdb_endpoint) { 'https://yoichikademo1.documents.azure.com:443/' }
-  let(:docdb_account_key) { 'EMwUa3EzsAtJ1qYfzwo9nQ3KudofsXNm3xLh1SLffKkUHMFl80OZRZIVu4lxdKRKxkgVAj0c2mv9BZSyMN7tdg==' }
-  let(:docdb_database) { 'BENCH02' }
-  let(:docdb_collection) { 'single-par-coll' }
+  let(:docdb_endpoint) { 'https://<YOUR ACCOUNT>.documents.azure.com:443/' }
+  let(:docdb_account_key) { '<ACCOUNT KEY>' }
+  let(:docdb_database) { '<DATABASE NAME>' }
+  let(:docdb_collection) { '<COLLECTION NAME>' }
   let(:auto_create_database) { true }
   let(:auto_create_collection) { true }
 
