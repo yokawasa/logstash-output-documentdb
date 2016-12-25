@@ -8,7 +8,7 @@ require_relative 'documentdb/partitioned_coll_client'
 require_relative 'documentdb/header'
 require_relative 'documentdb/resource'
 
-# An example output that does nothing.
+
 class LogStash::Outputs::Documentdb < LogStash::Outputs::Base
   config_name "documentdb"
 
