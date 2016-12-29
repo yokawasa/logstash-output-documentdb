@@ -89,12 +89,12 @@ class LogStash::Outputs::Documentdb < LogStash::Outputs::Base
     rescue RestClient::ExceptionWithResponse => rcex
       exdict = JSON.parse(rcex.response)
       if exdict['code'] == 'Conflict'
-        $logger.error("Duplicate Error: document #{unique_doc_identifier} already exists, data=>" + document.to_json)
+        $logger.error("Duplicate Error: document #{unique_doc_identifier} already exists, data=>" + (document.to_json).to_s)
       else
-        $logger.error("RestClient Error: '#{rcex.response}', data=>" + document.to_json)
+        $logger.error("RestClient Error: '#{rcex.response}', data=>" + (document.to_json).to_s)
       end
     rescue => ex
-      $logger.error("UnknownError: '#{ex}', uniqueid=>#{unique_doc_identifier}, data=>" + document.to_json )
+      $logger.error("UnknownError: '#{ex}', uniqueid=>#{unique_doc_identifier}, data=>" + (document.to_json).to_s )
     end
   end # def event
 
