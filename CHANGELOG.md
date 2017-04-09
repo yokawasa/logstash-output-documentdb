@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Fixed up [Issue#3](https://github.com/yokawasa/logstash-output-documentdb/issues/3)
+
 ## 0.1.1
 
 * changed required package version in gemspec
