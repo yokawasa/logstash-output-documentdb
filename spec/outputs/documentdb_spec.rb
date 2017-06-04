@@ -27,15 +27,13 @@ describe LogStash::Outputs::Documentdb do
   let(:docdb_output) { LogStash::Outputs::Documentdb.new(docdb_config) }
 
   before do
-      docdb_output.register
+    docdb_output.register
   end 
 
-  describe "#recieve" do
-    it "Should successfully send the event to documentdb" do
-      properties = { "a" => 1, "b" => 2, "c" => 3 }
-      event =  LogStash::Event.new(properties) 
-      expect {docdb_output.receive(event)}.to_not raise_error
-    end
+  it "Should successfully send the event to documentdb" do
+    properties = { "a" => 1, "b" => 2, "c" => 3 }
+    event =  LogStash::Event.new(properties) 
+    expect {docdb_output.receive(event)}.to_not raise_error
   end
 
 end
